@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import _ from 'lodash';
 import EmailPropTypes from '../PropTypes'
 import Box from './Box'
 import Item from './Item'
@@ -7,6 +8,7 @@ import Item from './Item'
 // inspired by http://htmlemailboilerplate.com
 export default function Email(props) {
   // default nested 600px wide outer table container (see http://templates.mailchimp.com/development/html/)
+  const height = _.has(props, 'height') ? props.height : '100%';
   return (
     <html lang={props.lang} xmlns="http://www.w3.org/1999/xhtml">
       <head>
@@ -25,7 +27,7 @@ export default function Email(props) {
           ...props.bodyStyle,
         }}
       >
-        <Box width="100%" height="100%" bgcolor={props.bgcolor}>
+        <Box width="100%" height={height} bgcolor={props.bgcolor}>
           <Item align={props.align} valign={props.valign}>
             <Box width={props.width} align="center" cellPadding={props.cellPadding} cellSpacing={props.cellSpacing} style={props.style}>
               {props.children}
