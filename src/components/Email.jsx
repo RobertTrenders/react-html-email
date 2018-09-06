@@ -8,8 +8,9 @@ import Item from "./Item";
 // inspired by http://htmlemailboilerplate.com
 export default function Email(props) {
   // default nested 600px wide outer table container (see http://templates.mailchimp.com/development/html/)
-  const height = _.has(props, "height") ? props.height : "100%";
-  const rootAlign = _.has(props, "rootAlign") ? props.rootAlign : undefined;
+  //  dont set height of root table, center align root table
+  const height = _.has(props, "height") ? props.height : undefined;
+  const rootAlign = _.has(props, "rootAlign") ? props.rootAlign : "center";
   return (
     <html lang={props.lang} xmlns="http://www.w3.org/1999/xhtml">
       <head>
