@@ -36,6 +36,8 @@ export default function Email(props) {
           bgcolor={props.bgcolor}
         >
           <Item align={props.align} valign={props.valign}>
+            <img src="https://spacergif.org/spacer.gif" width="600" height="1"
+              style="display: block; max-height: 1px; min-height: 1px; min-width: 600px; width: 600px;" />
             <Box
               width={props.width}
               align="center"
